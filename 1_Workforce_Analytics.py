@@ -3,6 +3,14 @@ from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
+
+# Custom AI workforce chart colors
+px.defaults.color_discrete_sequence = [
+    "#A855F7",  # Electric purple
+    "#2DE2E6",  # Cyber teal
+    "#D946EF",  # Neon magenta
+]
+
 import streamlit as st
 
 # Page configuration
@@ -11,6 +19,19 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
+
+# Subtle neon styling for workforce metrics
+st.markdown("""
+<style>
+[data-testid="stMetric"] {
+    background-color: #101935;
+    border: 1px solid #38345F;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.10);
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Locate and load the workforce dataset
 BASE_DIR = Path(__file__).resolve().parent.parent
