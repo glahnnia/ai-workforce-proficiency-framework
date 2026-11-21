@@ -1,0 +1,448 @@
+[
+  {
+    "id": "Q01",
+    "domain": "AI Literacy",
+    "competency_id": "D1.1",
+    "competency": "AI Concepts and Capabilities",
+    "type": "knowledge",
+    "question": "Which statement best describes generative AI?",
+    "options": {
+      "A": "It guarantees accurate answers when supplied with enough information.",
+      "B": "It generates content from learned patterns but may produce inaccurate or unsupported information.",
+      "C": "It functions only by retrieving exact passages from verified databases.",
+      "D": "It independently determines whether every output is legally compliant."
+    },
+    "scores": {
+      "A": 0,
+      "B": 4,
+      "C": 0,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q02",
+    "domain": "AI Literacy",
+    "competency_id": "D1.2",
+    "competency": "AI Limitations and Reliability",
+    "type": "reflection",
+    "question": "You've used an AI tool to help complete a work assignment. How would you assess the reliability of its output before using it?",
+    "options": {
+      "A": "I would trust the output if it sounds professional.",
+      "B": "I would review it for obvious mistakes.",
+      "C": "I would identify claims that need verification, check appropriate sources, and acknowledge remaining uncertainty."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q03",
+    "domain": "AI Literacy",
+    "competency_id": "D1.3",
+    "competency": "Appropriate AI Use Cases",
+    "type": "practical",
+    "question": "Your organization has approved an AI assistant. A colleague wants to use it to prepare a routine meeting summary, while another wants it to make final employee disciplinary decisions. What would you recommend?",
+    "options": {
+      "A": "Use AI for both tasks because the organization has approved the platform.",
+      "B": "Avoid AI for both tasks because it may make mistakes.",
+      "C": "Use AI to support the meeting summary with human review, but do not delegate final disciplinary authority to the assistant."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q04",
+    "domain": "Prompting & Interaction",
+    "competency_id": "D2.1",
+    "competency": "Instruction Design",
+    "type": "practical",
+    "question": "An employee wants an AI assistant to create a professional summary of a project meeting for department leadership. Which instruction would be most effective?",
+    "options": {
+      "A": "Summarize this meeting.",
+      "B": "Write a professional summary using these approved notes.",
+      "C": "Using these approved meeting notes, create a 200-word leadership summary covering decisions, action items, owners, and deadlines. Flag any missing information rather than inventing it."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q05",
+    "domain": "Prompting & Interaction",
+    "competency_id": "D2.2",
+    "competency": "Prompt Refinement",
+    "type": "practical",
+    "question": "An AI assistant produces a report that is too technical for the intended audience. What is the best next step?",
+    "options": {
+      "A": "Accept it because the assistant has completed the request.",
+      "B": "Ask it to simplify the language.",
+      "C": "Specify the intended audience, desired reading level, report structure, and information that must remain accurate, then review the revision."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q06",
+    "domain": "Prompting & Interaction",
+    "competency_id": "D2.3",
+    "competency": "Context Management",
+    "type": "knowledge",
+    "question": "Which principle best describes effective context management when interacting with an AI system?",
+    "options": {
+      "A": "Provide all available organizational information regardless of relevance.",
+      "B": "Include relevant, authorized information necessary for the task while minimizing unnecessary or sensitive data.",
+      "C": "Avoid providing any context because AI systems should infer the details.",
+      "D": "Include personal information whenever it may improve the response."
+    },
+    "scores": {
+      "A": 0,
+      "B": 4,
+      "C": 0,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q07",
+    "domain": "Workflow Integration",
+    "competency_id": "D3.1",
+    "competency": "Task Identification",
+    "type": "knowledge",
+    "question": "Which type of task is generally the strongest candidate for initial AI-assisted workflow improvement?",
+    "options": {
+      "A": "A high-stakes decision requiring professional judgment and no human review.",
+      "B": "A repetitive, well-defined task with clear quality criteria, appropriate data safeguards, and human oversight.",
+      "C": "A task involving confidential records uploaded to an unapproved platform.",
+      "D": "A process with no measurable outcomes or defined requirements."
+    },
+    "scores": {
+      "A": 0,
+      "B": 4,
+      "C": 0,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q08",
+    "domain": "Workflow Integration",
+    "competency_id": "D3.2",
+    "competency": "Workflow Application",
+    "type": "practical",
+    "question": "Your department prepares a weekly operational report using approved internal data. You want to integrate AI into the reporting process. What is the best approach?",
+    "options": {
+      "A": "Automate the entire report and distribute it without review.",
+      "B": "Use AI to draft portions of the report and manually check a few figures.",
+      "C": "Identify appropriate reporting steps, use an approved AI tool, validate the figures against source data, review the narrative, and document human approval before distribution."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q09",
+    "domain": "Workflow Integration",
+    "competency_id": "D3.3",
+    "competency": "Workflow Effectiveness",
+    "type": "practical",
+    "question": "A team introduces an AI assistant to help prepare customer service responses. Employees report that drafting is faster, but managers are concerned about quality. How should effectiveness be evaluated?",
+    "options": {
+      "A": "Measure only the number of responses generated.",
+      "B": "Compare the time required before and after implementation.",
+      "C": "Compare drafting time, accuracy, corrections, customer outcomes, and staff review requirements against a defined baseline."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q10",
+    "domain": "Evaluation & Verification",
+    "competency_id": "D4.1",
+    "competency": "Factual Verification",
+    "type": "practical",
+    "question": "An AI assistant produces a summary of new industry regulations, including several compliance requirements. How should the employee validate the information?",
+    "options": {
+      "A": "Assume the information is accurate because the system lists sources.",
+      "B": "Compare the summary with another AI assistant.",
+      "C": "Check the claims against current authoritative regulatory sources, confirm applicability and effective dates, and correct unsupported statements."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q11",
+    "domain": "Evaluation & Verification",
+    "competency_id": "D4.2",
+    "competency": "Error and Hallucination Detection",
+    "type": "practical",
+    "question": "An AI-generated project summary references a policy deadline that does not appear in the source document. What is the appropriate response?",
+    "options": {
+      "A": "Keep the deadline because the AI appears confident.",
+      "B": "Remove the deadline without checking whether it exists elsewhere.",
+      "C": "Investigate the claim using the original document and authoritative references, then correct or remove it based on verified evidence."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q12",
+    "domain": "Evaluation & Verification",
+    "competency_id": "D4.3",
+    "competency": "Output Quality Evaluation",
+    "type": "knowledge",
+    "question": "Which criteria provide the strongest basis for evaluating the quality of an AI-generated workplace deliverable?",
+    "options": {
+      "A": "Response speed, length, and visual appearance.",
+      "B": "Confidence of wording and professional tone.",
+      "C": "Accuracy, completeness, relevance, consistency with requirements, and appropriate evidence.",
+      "D": "Number of paragraphs and amount of technical vocabulary."
+    },
+    "scores": {
+      "A": 0,
+      "B": 0,
+      "C": 4,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q13",
+    "domain": "Responsible AI",
+    "competency_id": "D5.1",
+    "competency": "Privacy and Confidentiality",
+    "type": "practical",
+    "question": "An employee needs to summarize records containing customer information. The organization has an approved enterprise AI platform, but data handling restrictions apply. What should the employee do?",
+    "options": {
+      "A": "Upload the records to their personal AI account.",
+      "B": "Remove customer names and assume the records are safe to upload.",
+      "C": "Confirm that the intended data and use are permitted in the approved platform, apply required safeguards, and seek authorization when necessary."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q14",
+    "domain": "Responsible AI",
+    "competency_id": "D5.2",
+    "competency": "Bias and Fairness",
+    "type": "practical",
+    "question": "A recruitment team uses an AI tool to help summarize candidate qualifications. A manager notices that candidates with similar qualifications are being described differently in ways that may reflect bias. What should the team do?",
+    "options": {
+      "A": "Continue using the summaries because the AI system is automated.",
+      "B": "Ask the system to produce more neutral descriptions.",
+      "C": "Investigate the differences using job-relevant criteria, review affected outputs, document potential bias, and involve appropriate personnel before continuing to rely on the process."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q15",
+    "domain": "Responsible AI",
+    "competency_id": "D5.3",
+    "competency": "Policy and Security Compliance",
+    "type": "knowledge",
+    "question": "Which statement best describes responsible use of AI under organizational policies?",
+    "options": {
+      "A": "Employees may use any AI system if their work improves.",
+      "B": "Publicly available AI tools are automatically approved for workplace use.",
+      "C": "Employees should use authorized tools, follow applicable security and data policies, and report suspected violations through established procedures.",
+      "D": "Compliance is the responsibility of the technology department alone."
+    },
+    "scores": {
+      "A": 0,
+      "B": 0,
+      "C": 4,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q16",
+    "domain": "Human Oversight",
+    "competency_id": "D6.1",
+    "competency": "Human Review Requirements",
+    "type": "knowledge",
+    "question": "When is human review particularly important in an AI-supported process?",
+    "options": {
+      "A": "Only when an AI system produces a visibly incorrect answer.",
+      "B": "When decisions have significant consequences for safety, rights, employment, finances, or other high-impact outcomes.",
+      "C": "Only when the AI tool is unfamiliar to employees.",
+      "D": "Never, provided the system has been tested."
+    },
+    "scores": {
+      "A": 0,
+      "B": 4,
+      "C": 0,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q17",
+    "domain": "Human Oversight",
+    "competency_id": "D6.2",
+    "competency": "Risk and Escalation",
+    "type": "practical",
+    "question": "An employee discovers that an AI-generated financial report contains a calculation error that could affect an upcoming management decision. What should happen next?",
+    "options": {
+      "A": "Ignore the error if the overall report appears reasonable.",
+      "B": "Correct the calculation without informing anyone.",
+      "C": "Prevent the uncorrected information from being used, verify the affected calculations, notify the responsible personnel, and follow the organization's escalation procedures."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q18",
+    "domain": "Human Oversight",
+    "competency_id": "D6.3",
+    "competency": "Accountability and Decision Authority",
+    "type": "practical",
+    "question": "A department introduces an AI assistant to recommend which customer complaints should receive priority attention. Managers retain final decision-making authority. What is the most appropriate accountability arrangement?",
+    "options": {
+      "A": "Allow the AI assistant to make final decisions because it generates the recommendations.",
+      "B": "Ask managers to review recommendations, without establishing consistent review criteria.",
+      "C": "Establish documented decision authority, review criteria, escalation requirements, and records of human decisions and overrides."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q19",
+    "domain": "AI Collaboration",
+    "competency_id": "D7.1",
+    "competency": "Task Delegation",
+    "type": "practical",
+    "question": "An employee is preparing a presentation for organizational leadership. The work includes summarizing research, creating an outline, verifying statistics, and approving final recommendations. Which division of work is most appropriate?",
+    "options": {
+      "A": "Delegate all tasks, including final approval, to AI.",
+      "B": "Use AI to produce an outline and complete everything else manually.",
+      "C": "Use AI to assist with authorized summarization, outlining, and drafting while retaining responsibility for verification, interpretation, recommendations, and approval."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q20",
+    "domain": "AI Collaboration",
+    "competency_id": "D7.2",
+    "competency": "Human-AI Work Coordination",
+    "type": "knowledge",
+    "question": "Which practice best supports effective coordination between employees and AI systems?",
+    "options": {
+      "A": "Treat AI-generated output as completed work that requires no further review.",
+      "B": "Clearly define task responsibilities, expected outputs, verification steps, and human decision authority.",
+      "C": "Allow employees to determine responsibilities after the AI system produces its results.",
+      "D": "Minimize human participation whenever AI can generate an answer."
+    },
+    "scores": {
+      "A": 0,
+      "B": 4,
+      "C": 0,
+      "D": 0
+    }
+  },
+  {
+    "id": "Q21",
+    "domain": "AI Collaboration",
+    "competency_id": "D7.3",
+    "competency": "AI-Assisted Deliverable Review",
+    "type": "practical",
+    "question": "An AI assistant prepares a draft training guide for employees. The guide will be distributed across several departments. What should occur before publication?",
+    "options": {
+      "A": "Publish the guide because the content is organized and professional.",
+      "B": "Review its grammar and formatting.",
+      "C": "Validate accuracy, learning objectives, instructions, accessibility, organizational relevance, and applicable policies before approval."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q22",
+    "domain": "Change Readiness",
+    "competency_id": "D8.1",
+    "competency": "Adaptive Learning",
+    "type": "reflection",
+    "question": "Your organization introduces an approved AI tool that you have not used before. Which response best describes your approach to developing the necessary skills?",
+    "options": {
+      "A": "I would avoid learning the tool unless required.",
+      "B": "I would attend the required training and practice the demonstrated functions.",
+      "C": "I would identify relevant learning needs, complete appropriate training, practice with permitted tasks, seek feedback, and monitor whether my performance improves."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q23",
+    "domain": "Change Readiness",
+    "competency_id": "D8.2",
+    "competency": "Technology Adaptability",
+    "type": "reflection",
+    "question": "Your team changes its established workflow to incorporate an approved AI assistant. Some processes are unfamiliar, and you initially experience difficulty. What would be your approach?",
+    "options": {
+      "A": "Continue using the old process without exploring the new workflow.",
+      "B": "Follow the required training and ask for assistance when needed.",
+      "C": "Identify the difficulties, practice the approved workflow, seek feedback, and communicate problems or improvement opportunities to the appropriate team members."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  },
+  {
+    "id": "Q24",
+    "domain": "Change Readiness",
+    "competency_id": "D8.3",
+    "competency": "Continuous Improvement",
+    "type": "practical",
+    "question": "An AI-supported reporting workflow has been operating for three months. Employees report that it saves time, but several steps still require unnecessary corrections. What is the strongest improvement strategy?",
+    "options": {
+      "A": "Continue using the workflow unchanged because it saves time.",
+      "B": "Ask employees to suggest improvements.",
+      "C": "Review performance data and employee feedback, identify recurring errors, test targeted improvements, and monitor their effects on quality and efficiency."
+    },
+    "scores": {
+      "A": 0,
+      "B": 2,
+      "C": 4
+    }
+  }
+]

@@ -1,0 +1,62 @@
+{
+    "Individual Contributor": {
+        "AI Literacy": 3,
+    "Prompting & Interaction": 3,
+    "Workflow Integration": 3,
+    "Evaluation & Verification": 3,
+    "Responsible AI": 3,
+    "Human Oversight": 2,
+    "AI Collaboration": 3,
+    "Change Readiness": 3
+  },
+  "People Manager": {
+    "AI Literacy": 3,
+    "Prompting & Interaction": 3,
+    "Workflow Integration": 3,
+    "Evaluation & Verification": 3,
+    "Responsible AI": 4,
+    "Human Oversight": 4,
+    "AI Collaboration": 3,
+    "Change Readiness": 4
+  },
+  "Learning & Development Professional": {
+    "AI Literacy": 3,
+    "Prompting & Interaction": 4,
+    "Workflow Integration": 3,
+    "Evaluation & Verification": 4,
+    "Responsible AI": 4,
+    "Human Oversight": 3,
+    "AI Collaboration": 4,
+    "Change Readiness": 4
+  },
+  "Data or Technical Professional": {
+    "AI Literacy": 4,
+    "Prompting & Interaction": 4,
+    "Workflow Integration": 4,
+    "Evaluation & Verification": 4,
+    "Responsible AI": 4,
+    "Human Oversight": 3,
+    "AI Collaboration": 4,
+    "Change Readiness": 3
+  },
+  "AI Workflow Owner": {
+    "AI Literacy": 4,
+    "Prompting & Interaction": 4,
+    "Workflow Integration": 4,
+    "Evaluation & Verification": 4,
+    "Responsible AI": 4,
+    "Human Oversight": 4,
+    "AI Collaboration": 4,
+    "Change Readiness": 4
+  },
+  "Senior Leader": {
+    "AI Literacy": 3,
+    "Prompting & Interaction": 2,
+    "Workflow Integration": 3,
+    "Evaluation & Verification": 3,
+    "Responsible AI": 4,
+    "Human Oversight": 4,
+    "AI Collaboration": 3,
+    "Change Readiness": 4
+  }
+}
