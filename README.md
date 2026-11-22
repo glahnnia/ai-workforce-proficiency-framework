@@ -1,3 +1,4 @@
+
 # AI Workforce Learning & Proficiency Framework
 
 **Python | Streamlit | Plotly | Pandas | Workforce Analytics | AI Competency Assessment**
@@ -47,6 +48,38 @@ Users can filter workforce results by department and employee role, identify tra
 ![Organizational AI Workforce Analytics](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_1.png)
 
 *Interactive dashboard showing workforce filters, proficiency indicators, role-target attainment, and competency gaps.*
+
+<details>
+<summary>View additional individual assessment screenshots (2–7)</summary>
+
+![Individual AI Assessment Preview 2](screenshots/individual_assessment/Individual_Assessment_Preview_2.png)
+
+![Individual AI Assessment Preview 3](screenshots/individual_assessment/Individual_Assessment_Preview_3.png)
+
+![Individual AI Assessment Preview 4](screenshots/individual_assessment/Individual_Assessment_Preview_4.png)
+
+![Individual AI Assessment Preview 5](screenshots/individual_assessment/Individual_Assessment_Preview_5.png)
+
+![Individual AI Assessment Preview 6](screenshots/individual_assessment/Individual_Assessment_Preview_6.png)
+
+![Individual AI Assessment Preview 7](screenshots/individual_assessment/Individual_Assessment_Preview_7.png)
+
+</details>
+
+<details>
+<summary>View additional workforce analytics screenshots (2–6)</summary>
+
+![Organizational AI Workforce Analytics Preview 2](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_2.png)
+
+![Organizational AI Workforce Analytics Preview 3](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_3.png)
+
+![Organizational AI Workforce Analytics Preview 4](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_4.png)
+
+![Organizational AI Workforce Analytics Preview 5](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_5.png)
+
+![Organizational AI Workforce Analytics Preview 6](workforce_analytics/Organizational%20AI%20Workforce%20Analytics_Preview_6.png)
+
+</details>
 
 ---
 
@@ -346,4 +379,324 @@ These values come from generated demonstration records and do not represent actu
 
 ### Workforce Proficiency Distribution
 
-The dashboard visual
+The dashboard visualizes the number of employees in each proficiency classification:
+
+- Foundational
+- Developing
+- Applied
+- Advanced
+- Advanced (Leadership Review Eligible)
+
+The classifications are based on overall proficiency scores generated through the assessment scoring model. The leadership-review label denotes eligibility for additional review within this prototype, not a leadership credential or certification.
+
+### AI Proficiency by Department
+
+A horizontal bar chart compares average AI proficiency scores across the eight simulated departments. Scores range from 0 to 100 and are recalculated when department or employee-role filters change.
+
+### Organizational Competency Scores
+
+The dashboard calculates average scores for the eight AI competency domains, helping users identify areas of relative strength and development opportunity across the selected workforce.
+
+**Average competency score and competency gap rate are different measures:** an average score reports proficiency on a 0–100 scale, while a gap rate reports the percentage of employees below their individual role-specific targets.
+
+### AI Adoption & Training Insights
+
+The dashboard also explores organizational conditions associated with AI adoption:
+
+- **Approved AI Tool Access:** percentage of employees with access to approved tools
+- **Training Completed:** percentage with a completed training status
+- **Daily AI Usage:** percentage reporting daily AI use in the synthetic dataset
+- **Average Manager Support:** mean support rating on a 1–5 scale
+- **Training Participation:** counts of employees whose status is Not Started, In Progress, or Completed
+- **AI Usage Frequency:** counts across Daily, Weekly, Monthly, Rarely, and Never
+- **Department Comparisons:** approved tool access and average management support by department
+
+All measures use the currently selected workforce filters.
+
+### Role-Specific Competency Gap Analysis
+
+For each competency domain, the dashboard compares each employee's domain score with the proficiency threshold for that employee's assigned role. The resulting gap rate is calculated as:
+
+**Competency Gap Rate = (Employees Below Their Role-Specific Target / Employees in the Selected Workforce) × 100**
+
+For example, a 70% gap rate means that 70% of employees in the selected group scored below their own role-specific target for that domain. It does **not** mean that the group's average proficiency score was 30/100.
+
+The dashboard presents both an ordered table and a horizontal bar chart of competency gap rates. Each percentage reflects the selected department and employee-role filters.
+
+### Workforce Learning Priorities
+
+The workforce analytics page connects organization-level competency gaps to the activities in `data/learning_catalog.json`.
+
+Learning priorities are ordered by the percentage of employees who fall below their role-specific targets. The table includes:
+
+- Competency domain
+- Number of employees below target
+- Competency gap rate (%)
+- Recommended learning activity
+- Estimated activity duration (minutes)
+
+Users can export the filtered priorities as `workforce_learning_priorities.csv`.
+
+Unlike the individual assessment's **Critical / High / Moderate / Low** priority classifications, the organizational learning-priorities table ranks domains by how widespread the gaps are across the selected workforce.
+
+---
+
+## 11. Synthetic Workforce Dataset
+
+The organizational dataset is generated by `generate_workforce_data.py` and stored in:
+
+`data/synthetic_workforce.csv`
+
+It includes **1,500 synthetic employee records**, across eight departments and six employee-role profiles. Each record contains a simulated employee ID, department, role, assessment-derived scores, attainment metrics, and selected AI adoption indicators.
+
+### Data Generation Approach
+
+The generator uses:
+
+- A fixed random seed (`42`) for reproducible data generation
+- Weighted department distributions and department-specific role assignments
+- Simulated assessment responses based on assigned skill tendencies
+- The same assessment scoring functions used in the individual application
+- Role-specific proficiency targets to compute attainment and competency gaps
+- Separate simulated training, tool access, AI usage, and manager-support fields
+
+The simulated department adjustments and behavioral distributions are design assumptions. They do not describe observed workforce differences or establish relationships between training, access, and proficiency.
+
+### Dataset Fields
+
+| Field Group | Examples |
+|---|---|
+| Employee and organization | `employee_id`, `department`, `role` |
+| Overall assessment | `overall_proficiency_score`, `proficiency_level` |
+| Role comparison | `role_target_attainment_pct`, `competency_gaps_count` |
+| Assessment categories | `practical_score`, `knowledge_score`, `reflection_score` |
+| Competency domains | `ai_literacy_score`, `responsible_ai_score`, `human_oversight_score`, and five additional domain scores |
+| AI adoption and support | `training_participation`, `ai_usage_frequency`, `approved_tool_access`, `manager_support_score` |
+
+The included dataset is for demonstration and learning. It does not contain real employee assessment records.
+
+---
+
+## 12. Technical Architecture
+
+The project separates assessment content, scoring logic, synthetic-data generation, and presentation.
+
+```text
+Employee selects role
+        |
+        v
+24-question assessment
+        |
+        v
+Weighted proficiency and domain scores
+        |
+        v
+Role-specific target comparison
+        |
+        v
+Competency gaps and attainment
+        |
+        v
+Personalized learning recommendations
+
+        +-------------------------------+
+        |                               |
+        v                               v
+Individual results             Synthetic workforce generator
+                                        |
+                                        v
+                                1,500-employee CSV
+                                        |
+                                        v
+                                Workforce analytics page
+                                        |
+                                        v
+                                Filtered charts, gap rates,
+                                and CSV learning priorities
+```
+
+### Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Assessment logic, synthetic-data generation, and validation |
+| Streamlit | Interactive assessment and multipage analytics interface |
+| Pandas | Workforce data preparation, filtering, and aggregation |
+| NumPy | Installed numerical-analysis dependency |
+| Plotly | Interactive proficiency and workforce visualizations |
+| JSON | Assessment questions, role targets, and learning activities |
+| CSV | Synthetic workforce records and downloadable learning priorities |
+
+### Repository Structure
+
+```text
+ai-workforce-proficiency-framework/
+├── .streamlit/                       # Streamlit configuration
+├── data/
+│   ├── assessment_questions.json     # 24 assessment questions and scores
+│   ├── role_targets.json             # Targets for six employee roles
+│   ├── learning_catalog.json         # Competency-based learning activities
+│   └── synthetic_workforce.csv       # 1,500 demonstration employees
+├── pages/
+│   └── 1_Workforce_Analytics.py      # Organizational analytics page
+├── scoring/
+│   └── proficiency_scoring.py        # Scoring and recommendation functions
+├── screenshots/
+│   └── individual_assessment/        # Assessment screenshots
+├── workforce_analytics/             # Workforce analytics screenshots
+├── Individual_Assessment.py          # Streamlit entry point
+├── generate_workforce_data.py        # Reproducible dataset generation
+├── validate_workforce_data.py        # Synthetic dataset checks
+├── test_profiles.py                  # Simulated profile scoring tests
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Project documentation
+```
+
+The `pages/1_Workforce_Analytics.py` file is discovered automatically by Streamlit when the main application is launched.
+
+---
+
+## 13. Installation and Local Use
+
+### Prerequisites
+
+- Python 3.10 or newer is recommended
+- Git and a terminal or code editor
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/glahnnia/ai-workforce-proficiency-framework.git
+cd ai-workforce-proficiency-framework
+```
+
+### 2. Create and activate a virtual environment (recommended)
+
+**Windows PowerShell:**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**macOS or Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Launch the Streamlit application
+
+```bash
+python -m streamlit run Individual_Assessment.py
+```
+
+Streamlit will display a local URL in the terminal (commonly `http://localhost:8501`). The application navigation provides access to both the **Individual Assessment** and **Workforce Analytics** pages.
+
+### 5. Explore the application
+
+Complete the assessment using one of the six role profiles, review role-based proficiency results, and explore the recommended learning pathway. Then open the workforce analytics page to filter the synthetic organization and export learning priorities.
+
+### Optional: Regenerate the demonstration data
+
+```bash
+python generate_workforce_data.py
+```
+
+This overwrites `data/synthetic_workforce.csv` with a new run of the generator. The fixed random seed supports reproducibility when using the same code and compatible dependency versions.
+
+---
+
+## 14. Testing and Data Validation
+
+The repository includes two scripts for verifying important parts of the prototype.
+
+### Simulated Assessment Profiles
+
+Run:
+
+```bash
+python test_profiles.py
+```
+
+This tests four synthetic assessment profiles and checks scoring boundaries, eight-domain results, role-target comparisons, and selected expected recommendation outcomes.
+
+### Workforce Dataset Validation
+
+Run:
+
+```bash
+python validate_workforce_data.py
+```
+
+The validation script checks:
+
+- Exactly 1,500 employee records
+- Unique employee IDs
+- Eight departments and six employee roles
+- No missing values
+- Scores and attainment values within expected ranges
+- Role attainment values corresponding to increments of one-eighth
+- Competency gap counts between zero and eight
+
+These checks verify consistency with implemented rules; they are not evidence of external assessment validity.
+
+---
+
+## 15. Interpretation and Intended Use
+
+The framework is designed as a **workforce learning and analytics prototype**, illustrating how structured AI competency indicators can support individualized training and organization-level planning.
+
+The results can be used to explore questions such as:
+
+- Which AI competencies have the largest role-specific development gaps?
+- How do simulated proficiency patterns differ by department or employee role?
+- Which learning activities could address the most widespread development needs?
+- How can assessment and learning-design logic be connected to a workforce dashboard?
+
+Results should be interpreted as developmental demonstrations rather than employee-performance determinations. Organizations adapting the model would need to review role expectations, assessment content, accessibility, data privacy, and validation requirements within their own contexts.
+
+---
+
+## 16. Prototype Limitations
+
+- **Synthetic data:** All organizational records are generated rather than observed.
+- **Assessment validation:** The questions, scoring weights, proficiency thresholds, and role targets have not undergone formal psychometric or occupational validation.
+- **Limited domain sampling:** Each competency domain has three questions, so domain results are preliminary indicators.
+- **Mixed response formats:** Practical and knowledge-based items are combined with self-reported reflection questions; the tool does not observe actual job performance.
+- **Rules-based learning recommendations:** Recommendations come from a curated JSON catalog and explicit Python logic, not from a generative AI model or measured instructional outcomes.
+- **Illustrative adoption indicators:** Tool access, training participation, usage frequency, and manager support are simulated and should not be interpreted as causal drivers of proficiency.
+- **No production deployment controls:** The repository does not establish an employee identity system, longitudinal assessment history, or enterprise data-governance workflow.
+
+The project is intended to demonstrate design and implementation, not to certify employee readiness or make employment decisions.
+
+---
+
+## 17. Design Principles
+
+The prototype was built around five principles:
+
+1. **Development over ranking:** Present competency gaps as learning opportunities, not definitive judgments about employees.
+2. **Role relevance:** Compare each domain score against the expectations assigned to the employee's role.
+3. **Transparent calculations:** Keep category weights, thresholds, and recommendation conditions inspectable in the code.
+4. **Actionable results:** Translate assessment indicators into specific learning activities with time estimates.
+5. **Individual and organizational visibility:** Connect employee-level results with aggregated workforce analytics, while distinguishing scores, attainment, and gap rates.
+
+---
+
+## 18. Project Summary
+
+The **AI Workforce Learning & Proficiency Framework** brings together instructional design, applied AI literacy, Python development, and workforce analytics in one functional prototype. It demonstrates an end-to-end learning workflow: structured assessment, transparent scoring, role-specific competency comparisons, personalized learning activities, synthetic workforce analysis, and downloadable organizational learning priorities.
+
+Built with Python, Streamlit, Pandas, and Plotly, the project is a portfolio demonstration of competency framework design, learning analytics, data generation and validation, and interactive application development.
+
+**Author:** Glahnnia "Renee" Rates  
+**Project Type:** Applied AI | Workforce Learning & Development | Public Health Informatics and Analytics  
+**Data:** Fully synthetic demonstration records
